@@ -9,7 +9,7 @@ import Section from './Section/Section ';
 import css from './App.module.css';
 
 
-// первоначальное значение для contacts
+// первоначальное значение для contacts!
 const initialContacts = [
   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
   { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
