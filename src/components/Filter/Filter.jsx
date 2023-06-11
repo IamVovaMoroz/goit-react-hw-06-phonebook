@@ -1,8 +1,20 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import TextField from '@mui/material/TextField';
 import css from './Filter.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { getFilterValue } from 'redux/actions';
+import { getFilter } from 'redux/selectors';
 
-function Filter({ filterValue, onChange }) {
+function Filter(
+  // { filterValue, onChange }
+  ) {
+    const dispatch = useDispatch();
+    const handleFilterChange = e => {
+      // получаем значение с инпута , что вводит пользователь и передаем в action getFilterValue
+      dispatch(getFilterValue(e.target.value));
+    };
+    // получаем 
+    const filter = useSelector(getFilter);
   return (
     <label className={css.filter}>
       Find contacts by name
@@ -12,17 +24,21 @@ function Filter({ filterValue, onChange }) {
         variant="standard"
         type="text"
         name="filter"
-        value={filterValue}
+        // берем текущее значение из state  передаем в value, для отображения пользователю
+        value={filter}
 
         // убираем вызов функции, оставляем только ссылку onChange={onChange('filter')}
-        onChange={onChange}
+        onChange={handleFilterChange}
       />
     </label>
   );
 }
 
-Filter.propTypes = {
-  filterValue: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-};
+
 export default Filter;
+
+
+// Filter.propTypes = {
+//   filterValue: PropTypes.string.isRequired,
+//   onChange: PropTypes.func.isRequired,
+// };
