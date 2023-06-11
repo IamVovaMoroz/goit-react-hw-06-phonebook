@@ -11,12 +11,10 @@ import { createAction } from '@reduxjs/toolkit';
 // };
 // получаем name, number и возвращаем обьект с id + name, number
 
-export const addContacts = (name, number) => {
-  return {
-    type: ACTION_TYPE.addContacts,
-    payload: { id: nanoid(5), name, number },
-  };
-};
+
+export const getFilterValue = createAction(ACTION_TYPE.getFilterValue)
+
+export const deleteContacts = createAction(ACTION_TYPE.deleteContacts)
 
 // export const deleteContacts = contactId => {
 //   return {
@@ -25,6 +23,10 @@ export const addContacts = (name, number) => {
 //   };
 // };
 
-
-export const getFilterValue = createAction(ACTION_TYPE.getFilterValue)
-export const deleteContacts = createAction(ACTION_TYPE.deleteContacts)
+export const addContacts = (name, number) => {
+    return {
+      type: ACTION_TYPE.addContacts,
+      payload: { id: nanoid(5), name, number },
+    };
+  };
+  
