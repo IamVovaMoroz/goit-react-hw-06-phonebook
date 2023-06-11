@@ -1,6 +1,6 @@
-import { combineReducers } from 'redux';
-import { ACTION_TYPE } from './constants';
 
+import { ACTION_TYPE } from './constants';
+// import { combineReducers } from 'redux';
 // const tasksInitialState = [
 //   { id: 0, text: "Learn HTML and CSS", completed: true },
 //   { id: 1, text: "Get good at JavaScript", completed: true },
@@ -45,9 +45,16 @@ const initialContacts = [
   };
   
 // комбайн редюсеров , передаём в него filterReducer и contactsReducer
-  export const reducer = combineReducers({
+// import { combineReducers } from 'redux'; 
+// export const reducer = combineReducers({
+//     filter: filterReducer,
+//     contacts: contactsReducer,
+//   });
+
+//    toolkit комбаин не нужен
+
+
+export const reducer = ({
     filter: filterReducer,
     contacts: contactsReducer,
   });
-
-
