@@ -1,7 +1,5 @@
 
-import { createReducer } from '@reduxjs/toolkit';
 import { ACTION_TYPE } from './constants';
-import { addContacts, deleteContacts } from './actions';
 // import { combineReducers } from 'redux';
 // const tasksInitialState = [
 //   { id: 0, text: "Learn HTML and CSS", completed: true },
@@ -21,42 +19,26 @@ const initialContacts = [
   ];
 
 
-  
+
+//   export const contactsReducer = createReducer
+
+
 //   Reducer для добавления и удаления контактов
-//   export const contactsReducer = (state = initialContacts, action) => {
-//     switch (action.type) {
-//     //   case ACTION_TYPE.addContacts:
-//     //     // распыляем предыдущий обьект [...state] и добавляем action.payload новый контакт. 
-//     //     return [...state, action.payload];
+  export const contactsReducer = (state = initialContacts, action) => {
+    switch (action.type) {
+      case ACTION_TYPE.addContacts:
+        // распыляем предыдущий обьект [...state] и добавляем action.payload новый контакт. 
+        return [...state, action.payload];
   
-//       case ACTION_TYPE.deleteContacts:
-//         //фильтруем массив state.filter и оставляем  только те, что не совпадают с пришедшим contact.id. Т.е не равно action.payload. Если не находит возвращает предыдущий массив
-//         return state.filter(contact => contact.id !== action.payload);
-// //   если нет вариантов возвращаем тот что был
-//       default:
-//         return state;
-//     }
-//   };
-//   первоначально state = ''(т.е. отсутствие фильтра) Если action.type === ACTION_TYPE.getFilterValue, возвращаем action.payload (соответствующий значению фильтра)
-
-
-const contactsReducer = createReducer(initialContacts, {
-    [addContacts.type]: (state, action) => {
-      return {
-        ...state,
-        ...action.payload
-      };
-    },
-    [deleteContacts.type]: (state, action) => {
-      return state.filter(contact => contact.id !== action.payload);
+      case ACTION_TYPE.deleteContacts:
+        //фильтруем массив state.filter и оставляем  только те, что не совпадают с пришедшим contact.id. Т.е не равно action.payload. Если не находит возвращает предыдущий массив
+        return state.filter(contact => contact.id !== action.payload);
+//   если нет вариантов возвращаем тот что был
+      default:
+        return state;
     }
-  });
-  
-  export default contactsReducer;
-
-
-
-
+  };
+//   первоначально state = ''(т.е. отсутствие фильтра) Если action.type === ACTION_TYPE.getFilterValue, возвращаем action.payload (соответствующий значению фильтра)
   export const filterReducer = (state = '', action) => {
     switch (action.type) {
       case ACTION_TYPE.getFilterValue:
@@ -68,16 +50,9 @@ const contactsReducer = createReducer(initialContacts, {
   };
   
 
-//   const getFilterValue = createAction(ACTION_TYPE.getFilterValue);
 
-//   const filterReducer = createReducer('', {
-//     [getFilterValue.type]: (state, action) => {
-//       return action.payload;
-//     },
-//     // Добавьте другие обработчики здесь, если необходимо
-//   });
-  
-//   export default filterReducer;
+
+
 
 
 // комбайн редюсеров , передаём в него filterReducer и contactsReducer
