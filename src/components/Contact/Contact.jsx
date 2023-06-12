@@ -39,6 +39,9 @@ function Contact({ item }) {
   );
 }
 
+
+export default Contact;
+
 Contact.propTypes = {
   item: PropTypes.shape({
     name: PropTypes.string.isRequired,
@@ -46,5 +49,3 @@ Contact.propTypes = {
     id: PropTypes.string.isRequired,
   }),
 };
-
-export default Contact;
