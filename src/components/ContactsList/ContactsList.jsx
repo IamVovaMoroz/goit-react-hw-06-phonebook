@@ -13,6 +13,7 @@ function ContactsList(
     const contacts = useSelector(getContacts);
     // хук useSelector для получения значения состояния filter.
     const filter = useSelector(getFilter);
+    console.log('getFilter', getFilter)
 // фильтр приводим к нижнему реестру и убираем пробелы, для сравнения со значения в контактах
     const normolizedFilter = filter.toLowerCase().trim();
 

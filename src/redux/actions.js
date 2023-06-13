@@ -21,7 +21,7 @@ export const deleteContacts = createAction("deleteContacts")
 
 
 
-// export const getFilterValue = createAction("getFilterValue")
+export const getFilterValue = createAction("getFilterValue")
 
 // export const deleteContacts = contactId => {
 //   return {

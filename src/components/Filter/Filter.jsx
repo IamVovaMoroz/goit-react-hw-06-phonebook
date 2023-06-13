@@ -3,8 +3,10 @@ import TextField from '@mui/material/TextField';
 import css from './Filter.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 // import { getFilterValue } from 'redux/actions';
+// import { getFilter } from 'redux/selectors';
+// import { getFilterValue } from 'redux/filtersSlice';
 import { getFilter } from 'redux/selectors';
-import { getFilterValue } from 'redux/filtersSlice';
+import { getFilterValue } from 'redux/actions';
 
 function Filter(
   // { filterValue, onChange }
@@ -16,7 +18,7 @@ function Filter(
      
       const filterValue = e.target.value;
       dispatch(getFilterValue(filterValue));
-      console.log('getFilterValue', getFilterValue)
+      // console.log('getFilterValue', getFilterValue)
     };
     // получаем 
     const filter = useSelector(getFilter);
