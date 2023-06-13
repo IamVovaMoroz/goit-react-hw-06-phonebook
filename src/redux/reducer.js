@@ -1,7 +1,9 @@
 
 import { createReducer } from '@reduxjs/toolkit';
 // import { ACTION_TYPE } from './constants';
-import { addContacts, deleteContacts, getFilterValue } from './actions';
+import { addContacts, deleteContacts } from './actions';
+import { filterReducer } from './filtersSlice';
+// import { addContacts, deleteContacts, getFilterValue } from './actions';
 // import { combineReducers } from 'redux';
 // const tasksInitialState = [
 //   { id: 0, text: "Learn HTML and CSS", completed: true },
@@ -66,9 +68,9 @@ export const contactsReducer = createReducer(initialContacts, {
 //   };
   
 
-  export const filterReducer = createReducer('', {
-    [getFilterValue.type]: (state, action) => action.payload,
-  });
+//   export const filterReducer = createReducer('', {
+//     [getFilterValue.type]: (state, action) => action.payload,
+//   });
 
 
 
