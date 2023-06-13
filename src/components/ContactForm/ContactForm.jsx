@@ -6,6 +6,7 @@ import TextField from '@mui/material/TextField';
 // import { addContacts } from 'redux/actions';
 import css from './ContactForm.module.css';
 import { addContacts } from 'redux/contactsSlice';
+import { nanoid } from 'nanoid';
 
 export default function ContactForm() {
   const dispatch = useDispatch();
@@ -19,7 +20,8 @@ export default function ContactForm() {
     // получаем number из формы при submit
   const number = e.target.number.value;
   // console.log('number', number)
-  dispatch(addContacts(name,number))
+  const id = nanoid()
+  dispatch(addContacts({ id, name, number }));
   form.reset();
   };
   
