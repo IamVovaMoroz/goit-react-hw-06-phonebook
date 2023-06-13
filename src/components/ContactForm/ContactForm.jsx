@@ -3,8 +3,9 @@ import { useDispatch } from 'react-redux';
 
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import { addContacts } from 'redux/actions';
+// import { addContacts } from 'redux/actions';
 import css from './ContactForm.module.css';
+import { addContacts } from 'redux/contactsSlice';
 
 export default function ContactForm() {
   const dispatch = useDispatch();

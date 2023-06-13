@@ -1,8 +1,8 @@
 
-import { createReducer } from '@reduxjs/toolkit';
+// import { createReducer } from '@reduxjs/toolkit';
 // import { ACTION_TYPE } from './constants';
-import { addContacts, deleteContacts } from './actions';
-import { filterReducer } from './filtersSlice';
+// import { addContacts, deleteContacts } from './actions';
+
 // import { addContacts, deleteContacts, getFilterValue } from './actions';
 // import { combineReducers } from 'redux';
 // const tasksInitialState = [
@@ -15,12 +15,12 @@ import { filterReducer } from './filtersSlice';
 
 // первоначальное значение для contacts!
 
-const initialContacts = [
-    { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-    { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-    { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-    { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-  ];
+// const initialContacts = [
+//     { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
+//     { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
+//     { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
+//     { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+//   ];
 
 
 
@@ -44,17 +44,17 @@ const initialContacts = [
 //   };
 
 
-export const contactsReducer = createReducer(initialContacts, {
-    [addContacts.type]: (state, action) => {
-        console.log('addContacts.type', addContacts.type)
-      return [...state, action.payload];
-    },
-    [deleteContacts.type]: (state, action) => {
-        console.log('deleteContacts.type', deleteContacts.type)
+// export const contactsReducer = createReducer(initialContacts, {
+//     [addContacts.type]: (state, action) => {
+//         console.log('addContacts.type', addContacts.type)
+//       return [...state, action.payload];
+//     },
+//     [deleteContacts.type]: (state, action) => {
+//         console.log('deleteContacts.type', deleteContacts.type)
      
-      return state.filter((contact) => contact.id !== action.payload);
-    },
-  });
+//       return state.filter((contact) => contact.id !== action.payload);
+//     },
+//   });
   
 //   первоначально state = ''(т.е. отсутствие фильтра) Если action.type === ACTION_TYPE.getFilterValue, возвращаем action.payload (соответствующий значению фильтра)
 //   export const filterReducer = (state = '', action) => {
@@ -83,7 +83,8 @@ export const contactsReducer = createReducer(initialContacts, {
 //   });
 
 //    toolkit комбаин не нужен
-
+import { filterReducer } from './filtersSlice';
+import { contactsReducer } from './contactsSlice';
 
 export const reducer = ({
     filter: filterReducer,

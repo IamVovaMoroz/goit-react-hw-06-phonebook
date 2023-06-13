@@ -2,7 +2,8 @@ import { nanoid } from 'nanoid';
 // import PropTypes from 'prop-types';
 import Contact from 'components/Contact/Contact';
 import { useSelector } from 'react-redux';
-import { getContacts } from 'redux/selectors';
+
+import {  getContacts } from 'redux/contactsSlice';
 import { getFilter } from 'redux/filtersSlice';
 
 function ContactsList(
@@ -14,21 +15,29 @@ function ContactsList(
     const contacts = useSelector(getContacts);
     // хук useSelector для получения значения состояния filter.
     const filter = useSelector(getFilter);
-    console.log('getFilter', getFilter)
+   
 // фильтр приводим к нижнему реестру и убираем пробелы, для сравнения со значения в контактах
-    const normolizedFilter = filter.toLowerCase().trim();
+// const normalizedFilter = filter.toLowerCase().trim();
+const normalizedFilter = filter ? filter.toLowerCase().trim() : '';
+  console.log('normolizedFilter', normalizedFilter)
 
     // фиьтруем список контактов, на основе normolizedFilter . Оставляем список только тех, что есть в этом фильтре
     const list = contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normolizedFilter) );
+      contact.name.toLowerCase().includes(normalizedFilter) );
+
+
+
+
+
+      
   return (
     <ul>
 
       {list.map(contact => {
         return (<Contact  item={contact}  key={nanoid(5)}
+      
            
-           
-            // deleteContact={deleteContact}
+       
           />
         );
       })}
