@@ -2,7 +2,8 @@ import { nanoid } from 'nanoid';
 // import PropTypes from 'prop-types';
 import Contact from 'components/Contact/Contact';
 import { useSelector } from 'react-redux';
-import { getContacts, getFilter } from 'redux/selectors';
+import { getContacts } from 'redux/selectors';
+import { getFilter } from 'redux/filtersSlice';
 
 function ContactsList(
   // { list, deleteContact }
