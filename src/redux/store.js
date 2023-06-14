@@ -1,25 +1,4 @@
-// // Redux Toolkit 
-// import { configureStore } from "@reduxjs/toolkit";
-// // для работы с localStorage
 
-// import { configureStore } from "@reduxjs/toolkit";
-// import { persistStore, persistReducer } from 'redux-persist'
-// import storage from 'redux-persist/lib/storage'
-
-// import { reducer  } from "./reducer";
-
-
-
-// // persistConfig  добавляем в новый редюсер persistedReducer
-// const persistConfig = {
-//   key: 'root',
-//   storage,
-// }
-// const persistedReducer = persistReducer(persistConfig, reducer)
-// // export const store = configureStore({reducer});
-// export const store = configureStore({reducer: persistedReducer});
-
-// export const persistor = persistStore(store)
 
 import { filterReducer } from './filtersSlice';
 import { contactsReducer } from './contactsSlice';
@@ -48,6 +27,29 @@ export const store = configureStore({
 
 export const persistor = persistStore(store);
 
+
+// // Redux Toolkit 
+// import { configureStore } from "@reduxjs/toolkit";
+// // для работы с localStorage
+
+// import { configureStore } from "@reduxjs/toolkit";
+// import { persistStore, persistReducer } from 'redux-persist'
+// import storage from 'redux-persist/lib/storage'
+
+// import { reducer  } from "./reducer";
+
+
+
+// // persistConfig  добавляем в новый редюсер persistedReducer
+// const persistConfig = {
+//   key: 'root',
+//   storage,
+// }
+// const persistedReducer = persistReducer(persistConfig, reducer)
+// // export const store = configureStore({reducer});
+// export const store = configureStore({reducer: persistedReducer});
+
+// export const persistor = persistStore(store)
 
 
 

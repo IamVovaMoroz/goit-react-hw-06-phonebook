@@ -6,6 +6,8 @@ export const addContacts = createAction("addContacts", (name, number) => ({
   }));
 
 export const deleteContacts = createAction("deleteContacts")
+export const getFilterValue = createAction("getFilterValue")
+
 
 // Принимает один аргумент value, который представляет значение фильтра. Возвращаем объект с типом действия ACTION_TYPE.getFilterValue и значением фильтра в свойстве payload.
 // export const getFilterValue = value => {
@@ -21,7 +23,7 @@ export const deleteContacts = createAction("deleteContacts")
 
 
 
-export const getFilterValue = createAction("getFilterValue")
+
 
 // export const deleteContacts = contactId => {
 //   return {
