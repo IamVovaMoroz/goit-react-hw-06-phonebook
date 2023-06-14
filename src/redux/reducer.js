@@ -83,10 +83,11 @@
 //   });
 
 //    toolkit комбаин не нужен
-import { filterReducer } from './filtersSlice';
-import { contactsReducer } from './contactsSlice';
+// import { filterReducer } from './filtersSlice';
+// import { contactsReducer } from './contactsSlice';
+// import {combineReducers} from "@reduxjs/toolkit"
 
-export const reducer = ({
-    filter: filterReducer,
-    contacts: contactsReducer,
-  });
+// export const reducer = combineReducers({
+//     filter: filterReducer,
+//     contacts: contactsReducer,
+//   });
