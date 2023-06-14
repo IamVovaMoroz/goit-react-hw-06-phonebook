@@ -1,12 +1,12 @@
-import { nanoid } from 'nanoid';
-// import { ACTION_TYPE } from './constants';
-import { createAction } from '@reduxjs/toolkit';
-export const addContacts = createAction("addContacts", (name, number) => ({
-    payload: { id: nanoid(5), name, number },
-  }));
+// import { nanoid } from 'nanoid';
+// // import { ACTION_TYPE } from './constants';
+// import { createAction } from '@reduxjs/toolkit';
+// export const addContacts = createAction("addContacts", (name, number) => ({
+//     payload: { id: nanoid(5), name, number },
+//   }));
 
-export const deleteContacts = createAction("deleteContacts")
-export const getFilterValue = createAction("getFilterValue")
+// export const deleteContacts = createAction("deleteContacts")
+// export const getFilterValue = createAction("getFilterValue")
 
 
 // Принимает один аргумент value, который представляет значение фильтра. Возвращаем объект с типом действия ACTION_TYPE.getFilterValue и значением фильтра в свойстве payload.

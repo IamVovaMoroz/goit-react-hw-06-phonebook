@@ -19,7 +19,7 @@ function ContactsList(
 // фильтр приводим к нижнему реестру и убираем пробелы, для сравнения со значения в контактах
 // const normalizedFilter = filter.toLowerCase().trim();
 const normalizedFilter = filter ? filter.toLowerCase().trim() : '';
-  console.log('normolizedFilter', normalizedFilter)
+  // console.log('normolizedFilter', normalizedFilter)
 
     // фиьтруем список контактов, на основе normolizedFilter . Оставляем список только тех, что есть в этом фильтре
     const list = contacts.filter(contact =>

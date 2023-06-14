@@ -37,7 +37,7 @@ reducers:{
 // export const getContacts = state => state.contacts;
 export const getContacts = state => state.contacts.contacts;
 
-console.log('getContacts', getContacts)
+// console.log('getContacts', getContacts)
 // для работы actions создаем с нужными именами contactsSlice.actions
 
 export const { addContacts, deleteContact } = contactsSlice.actions;
