@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import { initialContacts } from "./reducer";
-// import { addContacts } from "./actions";
+
 
 // Slice принимает обьект
 export const contactsSlice = createSlice({
